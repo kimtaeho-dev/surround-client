@@ -8,6 +8,7 @@ module.exports = {
         Atomics: 'readonly',
         SharedArrayBuffer: 'readonly',
     },
+    parser: 'babel-eslint',
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
@@ -23,6 +24,27 @@ module.exports = {
         'react/jsx-indent': [1, 'tab'],
         'react/jsx-indent-props': [1, 'tab'],
         'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+        'react/jsx-wrap-multilines': [
+            'error',
+            {
+                declaration: 'parens-new-line',
+                assignment: 'parens-new-line',
+                return: 'parens-new-line',
+                arrow: 'parens-new-line',
+                condition: 'parens-new-line',
+                logical: 'ignore',
+                prop: 'ignore',
+            },
+        ],
+        'react/jsx-curly-spacing': [
+            1,
+            {
+                when: 'always',
+                spacing: {
+                    objectLiterals: 'always',
+                },
+            },
+        ],
         'import/extensions': [
             'error',
             'ignorePackages',
@@ -34,11 +56,13 @@ module.exports = {
             },
         ],
         'array-bracket-spacing': ['error', 'always'],
+        'object-curly-spacing': ['error', 'always'],
     },
     settings: {
         'import/resolver': {
             node: {
                 extensions: ['.js', '.jsx', '.ts', '.tsx'],
+                paths: ['.'],
             },
         },
     },
