@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
         height: auto;
         margin: 0;
         padding: 0;
-        background-color: gray;
+        background-color: #000000;
     }
 
     #root {
@@ -50,6 +50,7 @@ const GlobalStyles = createGlobalStyle`
         display: flex;
         width: 100%;
         height: 100%;
+        /* pointer-events: none; */
     }
 `;
 

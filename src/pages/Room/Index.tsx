@@ -1,18 +1,45 @@
 import React, { useState } from 'react';
-import MusicPlayer from 'src/components/common/MusicPlayer';
+import AppBar from 'src/components/AppBar';
+import MusicPlayer from 'src/components/MusicPlayer';
+import PlayList from 'src/components/PlayList';
 
-import { Container, PlayerContainer } from './Styles';
+import {
+  ChatWrapper,
+  Container,
+  PlayerWrapper,
+} from './Styles';
 
 function Room() {
-	const [ videoId, setVideoId ] = useState('');
+  const [videoId, setVideoId] = useState('');
 
-	return (
-		<Container>
-			<PlayerContainer>
-				<MusicPlayer videoId={ videoId } />
-			</PlayerContainer>
-		</Container>
-	);
+  return (
+    <Container>
+
+      <AppBar />
+
+      <PlayerWrapper>
+        <MusicPlayer videoId={videoId} />
+        <PlayList />
+      </PlayerWrapper>
+
+      <ChatWrapper>
+        <button
+          type="button"
+          onClick={() => setVideoId('6NqTV84JEB4')}
+        >
+          video test 1
+        </button>
+        <br />
+        <button
+          type="button"
+          onClick={() => setVideoId('EEfJgTJL4Mc')}
+        >
+          video test 2
+        </button>
+      </ChatWrapper>
+
+    </Container>
+  );
 }
 
 export default Room;
