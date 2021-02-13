@@ -16,20 +16,7 @@ const Container = styled.div`
   padding-top: calc(${ContainerTopPadding}px + ${HeaderPadding}px);
 `;
 
-const PlayerWrapper = styled.div`
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  width: auto;
-  height: 100%;
-`;
-
-const ChatWrapper = styled.div`
-  flex: 1;
-  width: auto;
-  height: 100%;
-  border-left: solid 1px white;
-  margin-left: 24px;
-`;
-
-export { Container, PlayerWrapper, ChatWrapper };
+export {
+  // eslint-disable-next-line import/prefer-default-export
+  Container,
+};

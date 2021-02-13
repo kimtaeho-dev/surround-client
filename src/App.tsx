@@ -6,18 +6,28 @@ import {
   Switch,
 } from 'react-router-dom';
 
-import Room from './pages/Room/Index';
-import GlobalStyles from './styles/GlobalStyles';
+import Header from './common/Header';
+import Home from './Home';
+import Room from './Room';
 
 function App() {
   return (
     <GlobalContainer>
 
-      <GlobalStyles />
+      <Header />
 
       <BrowserRouter>
         <Switch>
-          <Route component={Room} />
+          <Route
+            exact
+            path="/"
+            component={Home}
+          />
+          <Route
+            exact
+            path="/room"
+            component={Room}
+          />
         </Switch>
       </BrowserRouter>
 

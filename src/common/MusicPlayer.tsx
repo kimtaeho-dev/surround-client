@@ -6,34 +6,14 @@ import YouTube, { Options } from 'react-youtube';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; 
-  width: 100%;
-  height: auto;
+  width: 232px;
+  height: 232px;
 `;
 
-const PlayerContainer = styled.div`
+const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  height: auto;
-  padding-bottom: calc(9 / 16 * 100%);
-
-  /* :hover ::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 99;
-      background: linear-gradient(
-          rgba(0, 0, 0, 0.6) 0%,
-          rgba(0, 0, 0, 0) 25%,
-          rgba(0, 0, 0, 0) 100%);
-  } */
+  height: 100%;
 `;
 
 const YoutubePlayerOptions: Options = {
@@ -47,7 +27,7 @@ const YoutubePlayerOptions: Options = {
     autoplay: 1,
     modestbranding: 1,
     disablekb: 1,
-    mute: 1,
+    mute: 0,
   },
 };
 
@@ -80,7 +60,7 @@ function MusicPlayer({
 
   const updatePlayerCurrentTime = useCallback((player: PlayerMethods) => {
     if (player.getPlayerState() === PlayerState.PLAYING) {
-      const currentPlayerId = setInterval(() => {
+      const currentPlayerId = window.setInterval(() => {
         console.log(player.getCurrentTime());
       }, 500);
       setPlayerId(currentPlayerId);
@@ -99,7 +79,7 @@ function MusicPlayer({
 
   return (
     <Container>
-      <PlayerContainer>
+      <Wrapper>
         <YouTube
           videoId={videoId}
           containerClassName="player-container"
@@ -107,7 +87,7 @@ function MusicPlayer({
           onStateChange={onStateChange}
           onPause={handlePause}
         />
-      </PlayerContainer>
+      </Wrapper>
     </Container>
   );
 }
