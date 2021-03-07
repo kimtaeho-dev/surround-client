@@ -10,13 +10,10 @@
   "rules": {
     "@typescript-eslint/no-use-before-define": ["error"],
     "react/jsx-one-expression-per-line": "off",
-    "react/jsx-filename-extension": [
-      2,
-      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
-    ],
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "import/extensions": 0,
     "no-use-before-define": "off",
-    "object-curly-newline": ["error", { "either": true }]
+    "object-curly-newline": "off"
   },
   "settings": {
     "import/resolver": {
